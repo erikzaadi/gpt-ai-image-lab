@@ -23,7 +23,9 @@ function basicGuardrails(prompt) {
     return "Prompt is too long (max 400 chars).";
   }
   for (const w of banned) {
-    if (p.includes(w)) return `Please avoid: "${w}" (classroom safety rule).`;
+    if (p.includes(w)) {
+      return `Please avoid: "${w}" (classroom safety rule).`;
+    }
   }
   return null;
 }
