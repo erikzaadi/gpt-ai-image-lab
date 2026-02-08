@@ -6,6 +6,24 @@ const html = document.documentElement;
 
 const conversationHistory = [];
 
+const bgColors = [
+  ["#1a1a2e", "#16213e"],
+  ["#2d132c", "#801336"],
+  ["#1a3c40", "#1d5c63"],
+  ["#2c003e", "#512b58"],
+  ["#1b262c", "#0f4c75"],
+  ["#1f1f38", "#3d3d6b"],
+  ["#0d1b2a", "#1b263b"],
+  ["#2b2024", "#4a3728"],
+  ["#1a2639", "#3e4a61"],
+  ["#2c1810", "#5c3d2e"]
+];
+
+function changeBackground() {
+  const colors = bgColors[Math.floor(Math.random() * bgColors.length)];
+  document.body.style.background = `linear-gradient(135deg, ${colors[0]} 0%, ${colors[1]} 100%)`;
+}
+
 function getTheme() {
   return localStorage.getItem("theme") || "dark";
 }
@@ -56,6 +74,7 @@ btn.onclick = async () => {
 
   addMessage("user", prompt);
   promptInput.value = "";
+  changeBackground();
 
   btn.disabled = true;
   btn.textContent = "...";

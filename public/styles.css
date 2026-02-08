@@ -48,10 +48,10 @@ body {
 }
 
 .chat-container {
-  width: 66vw;
-  height: 66vh;
+  width: 90vw;
+  height: 90vh;
   min-width: 320px;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 20px;
   background: var(--container-bg);
   border-radius: 16px;
@@ -63,7 +63,7 @@ body {
 }
 
 .chat-header {
-  background: var(--header-gradient);
+  background: linear-gradient(135deg, #ffb6c1 0%, #ff69b4 100%);
   color: #fff;
   padding: 16px 20px;
   display: flex;
@@ -75,6 +75,28 @@ body {
   margin: 0;
   font-size: 1.5rem;
   font-weight: 600;
+  background: linear-gradient(
+    90deg,
+    #4a0020,
+    #8b0040,
+    #fff,
+    #8b0040,
+    #4a0020
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glitter 2s linear infinite;
+}
+
+@keyframes glitter {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
 }
 
 .theme-toggle {
